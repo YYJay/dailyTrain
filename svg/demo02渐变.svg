@@ -1,0 +1,54 @@
+<?xml version="1.0" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN"
+"http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+
+<svg width="100%" height="100%" version="1.1"
+xmlns="http://www.w3.org/2000/svg">
+
+
+
+<!-- 定义渐变,必须在defs里定义 -->
+<defs>
+  <!-- 线性渐变 -->
+  <linearGradient id="orange_red" x1="0%" y1="0%" x2="100%" y2="0%">
+    <stop offset="0%" style="stop-color:rgb(255,255,0);
+    stop-opacity:1"/>
+    <stop offset="100%" style="stop-color:rgb(255,0,0);
+    stop-opacity:1"/>
+  </linearGradient>
+
+  <!-- 放射性渐变 -->
+  <radialGradient id="grey_blue" cx="50%" cy="50%" r="50%"
+    fx="50%" fy="50%">
+    <stop offset="0%" style="stop-color:rgb(200,200,200);
+    stop-opacity:0"/>
+    <stop offset="100%" style="stop-color:rgb(0,0,255);
+    stop-opacity:1"/>
+  </radialGradient>
+
+</defs>
+
+<!-- 在其他地方使用渐变 -->
+<ellipse cx="200" cy="190" rx="85" ry="55"
+style="fill:url(#orange_red)"/>
+<ellipse cx="400" cy="390" rx="85" ry="55"
+style="fill:url(#grey_blue)"/>
+
+<!--
+  线性渐变参数:
+    id:  定义一个唯一的名称
+    fill:url(#orange_red):  把 ellipse 元素链接到此渐变
+    x1、x2(y1、y2): 定义渐变的开始和结束位置
+    渐变的颜色范围可由两种或多种颜色组成。
+    每种颜色通过一个 <stop> 标签来规定。
+    offset 属性用来定义渐变的开始和结束位置。
+
+  放射性渐变参数:
+    cx、cy 和 r 属性定义外圈
+    fx 和 fy 定义内圈
+    其他配置同线性渐变
+-->
+
+
+
+</svg>

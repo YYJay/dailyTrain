@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+<body>
+  <svg  width="300" height="200">
+   <path id="test1" style="fill:#fe0; stroke:#fff; stroke-width:5;" />
+</svg>
+<script type="text/javascript">
+  var cx = 100;
+  var cy = 100;
+  var r = 100;
+  var deg = 100;
+
+  var x0 = cx
+  var y0 = cy-r
+
+  var x1 = cx+r*Math.sin(deg*Math.PI/180);
+  var y1 = cy-r*Math.cos(deg*Math.PI/180);
+  document.querySelector("#test1").setAttribute("d","M "+cx+","+cy+" L "+x0+","+y0+" A "+r+","+r+" 0 0,1 "+x1+","+y1+" Z");
+</script>
+</body>
+</html>

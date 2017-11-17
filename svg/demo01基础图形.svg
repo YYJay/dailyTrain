@@ -1,0 +1,101 @@
+<?xml version="1.0" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN"
+"http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+
+<svg width="100%" height="100%" version="1.1"
+xmlns="http://www.w3.org/2000/svg">
+
+<!-- 矩形 -->
+<!--
+参数:
+x(y): 距离左侧位置(y为顶部)
+rx: 圆角
+opacity: 真个元素的透明度
+
+style:
+fill: 填充
+fill-opacity: 填充透明度
+stroke-width: 边框宽度
+stroke: 笔触颜色
+stroke-opacity: 笔触颜色透明度
+-->
+<rect width="300" height="100"
+  x="20"
+  y="20"
+  rx='50'
+  ry='50'
+  opacity='0.9'
+  style=" fill: rgb(0,0,255); fill-opacity: 0.4; stroke-width: 1; stroke: rgb(0,0,0) "
+  />
+
+
+
+<!-- 圆 -->
+<!--
+  cx(cy): 原点xy坐标,默认(0, 0)
+  r: 半径
+ -->
+<circle
+  cx="100"
+  cy="50"
+  r="40"
+  style=" fill:rgb(70,158,144); stroke:rgb(0,0,100); stroke-width:1 "
+/>
+
+
+<!-- 椭圆 -->
+<!--
+  rx(ry): 水平(垂直)直径
+  cx(cy): 原点xy坐标,默认(0, 0)
+-->
+<ellipse cx="300" cy="150" rx="200" ry="80"
+style=" fill:rgb(200,100,50); stroke:rgb(0,0,100); stroke-width:2 "
+/>
+
+
+
+<!-- 线条 -->
+<!--
+  x1: 线条起点x轴坐标
+  x2: 线条终点x轴坐标
+ -->
+<line x1="10" y1="20" x2="300" y2="300"
+style="stroke:rgb(99,99,99);stroke-width:2"/>
+
+
+<!-- 多边形  -->
+<!--
+  points:  多边形每个角的 x 和 y 坐标
+ -->
+<polygon points="220,100 300,210 170,250"
+style="fill:#cccccc; stroke:#000000;stroke-width:1"/>
+
+
+<!-- 折线,与多边形类似,只是不连接起点与终点  -->
+<polyline points="0,0 0,20 20,20 20,40 40,40 40,60"
+style="fill:white;stroke:red;stroke-width:2"/>
+
+
+
+<!-- 路径 -->
+<!--
+  开始于位置 250 150，到达位置 150 350，然后从那里开始到 350 350，最后在 250 150 关闭路径。
+  M = moveto
+  L = lineto
+  Z = closepath
+  H = horizontal lineto
+  V = vertical lineto
+  C = curveto  曲线
+  S = smooth curveto
+  Q = quadratic Belzier curve
+  T = smooth quadratic Belzier curveto
+  A = elliptical Arc  椭圆
+  大写表示绝对定位,小写表示相对定位
+ -->
+<path d="M250 150 L150 350 L350 350 Z" />
+
+
+
+
+
+</svg>

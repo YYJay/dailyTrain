@@ -1,0 +1,26 @@
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>HelloWorld</title>
+</head>
+<body>
+    <p>Apple</p>
+    <p>Pear</p>
+    <p>Banana</p>
+    <button class='btn'>
+      点击绑定数据
+    </button>
+    <script src="./d3.min.js" charset="utf-8"></script>
+    <script>
+    const strArr = ['tex1', 'tex2', 'tex3']
+    const btn = document.querySelector('.btn')
+    btn.onclick = () => {
+      const p =   d3.select("body").selectAll("p")
+      p.data(strArr)
+      p.text((item, index) => (
+        `第${index}个元素绑定的数据是${item}`
+      ))
+    }
+    </script>
+</body>
+</html>
