@@ -7,15 +7,23 @@
   <title>cat</title>
 </head>
 <body>
-  <svg height='300'>
+  <svg height='300' xmlns:xlink='http://w3.org/1999/xlink'
+      xmlns:xlink='http://w3.org/2000/svg'
+  >
     <titile>cat</titile>
     <disc>this is a cate</disc>
+    <!-- 大饼脸 -->
     <circle cx='50' cy='50' r= '50' fill='none' stroke='black'/>
+    <!-- 眼睛 -->
     <circle cx='25' cy='30' r= '5' fill='black' stroke='none'/>
     <circle cx='75' cy='30' r= '5' fill='black' stroke='none'/>
-    <g>
-      <line x1='' x2= />
+    <!-- 胡须 -->
+    <g id='whiskers'>
+      <line x1='60' y1='50' x2='110' y2='30' stroke='black'/>
+      <line x1='60' y1='50' x2='110' y2='80' stroke='black'/>
     </g>
-  </svg>
+    <!-- 复用胡须 -->
+    <use xlink:href='#whiskers' transform='scale(-1 1)' />
+    </svg>
 </body>
 </html>
