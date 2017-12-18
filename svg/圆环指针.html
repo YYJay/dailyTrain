@@ -21,13 +21,13 @@
 </head>
 <body>
   <div id="circle-container">
-      <svg width="120" height="120" viewbox="0 0 120 120">
+      <svg width="300" height="300" viewbox="0 0 300 300">
         <!-- 渐变 -->
           <defs>
-            <linearGradient id="orange_red" x1="0%" y1="0%" x2="100%" y2="0%">
-              <stop offset="0%" style="stop-color:#A7D0FF"/>
-              <stop offset="100%" style="stop-color:#4FA2FF"/>
-            </linearGradient>
+            <linearGradient id="orange_red" x1="45%" y1="100%" x2="20%" y2="0%">
+              <stop offset="0%" style="stop-color:red"/>
+              <stop offset="100%" style="stop-color:green"/>
+            </linearGradient>z
           </defs>
           <!-- 扇形 -->
           <path id="test1" style="fill:url(#orange_red); stroke:none; stroke-width:0;opacity: .1" />
@@ -43,7 +43,8 @@
         <!-- 圆弧 -->
         <circle id='arc' cx="120" cy="120" r="100" stroke-width="15" stroke="url(#orange_red)" fill="none"
         transform="rotate(-90 ,120, 120)"
-        stroke-dasharray="0 1069">
+        stroke-linecap='round'
+        stroke-dasharray="1000 69">
         </circle>
         </circle>
         <!-- 圆心 -->
