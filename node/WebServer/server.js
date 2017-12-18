@@ -36,3 +36,4 @@ http.createServer(function (req, res) {
 }).listen(8888)
 
 console.log('服务器开启成功,端口号:8888')
+// node server.js
