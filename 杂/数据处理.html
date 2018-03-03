@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+<body>
+  <script type="text/javascript">
+  const data = {
+    rows: [
+      [ 'Lisa', 16, 'Female', '2000-12-01' ],
+      [ 'Bob', 22, 'Male', '1996-01-21' ],
+    ],
+    metaData: [
+      { name: 'name', note: '' },
+      { name: 'age', note: '' },
+      { name: 'gender', note: '' },
+      { name: 'birthday', note: '' },
+    ],
+  }
+const keyNames = data.metaData.map(item => item.name)
+const newData = data.rows.map(row => {
+    const rowObj = {}
+    row.forEach((rowValue, index) => { rowObj[keyNames[index]] = rowValue })
+    return rowObj
+})
+console.log(newData)
+  </script>
+</body>
+</html>

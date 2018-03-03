@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+<body>
+  <script type="text/javascript">
+    // 单词首字母大写
+    const capitalizeEveryWord = str => str.replace(/\b[a-z]/g, char => char.toUpperCase()) // '/b为字符边界'
+    console.log(capitalizeEveryWord('hell world'))
+
+    // 计算两点之间的距离
+    const distance = (x0, y0, x1, y1) => Math.hypot(x1 - x0, y1 - y0)
+    distance(1, 1, 2, 3) // 2.23606797749979
+
+    // 数组扁平化
+    const flatten = arr => arr.reduce((a, v) => a.concat(v), [])
+    flatten([ 1, [ 2 ], 3, 4 ]) // [1,2,3,4]
+
+    // 随机排列数组
+    const shuffle = arr => arr.sort(() => Math.random() - 0.5)
+    shuffle([ 1, 2, 3 ]) // [2,3,1]
+  </script>
+</body>
+</html>
