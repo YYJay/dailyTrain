@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+<body>
+  <script>
+    // es5
+    function Animal() {
+      this.species1 = '父对象1'
+    }
+    function Animal2() {
+      this.species2 = '父对象2'
+      this.species3 = '父对象2-1'
+    }
+    function Cat(name) {
+      this.name = name // this指向实例
+      Animal.apply(this, arguments) // 继承方式1,将Animal所有属性转移到Cat实例上,不推荐
+    }
+    Cat.prototype = new Animal2() // 继承方式2,将构造函数的prototype属性绑定到父对象的实例上
+
+    const cat = new Cat('Cat实例')
+    console.log(cat instanceof Cat) // true
+    console.log(cat.hasOwnProperty('type')) // false
+    console.log('eat' in cat) // true
+    for (const keys in cat) { console.log(keys) } // 遍历到了所有的属性(包括原型上的属性)
+    console.log(Object.keys(cat)) // 只获取实例属性
+  </script>
+</body>
+</html>

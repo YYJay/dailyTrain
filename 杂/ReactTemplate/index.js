@@ -1,1 +1,2 @@
-export ReactTemplate from './ReactTemplate'
+import ReactTemplate from './ReactTemplate'
+export default ReactTemplate

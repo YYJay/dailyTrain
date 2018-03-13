@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+<body>
+  <script type="text/javascript">
+    try {
+      throw new Error('错误信息')
+    } catch (err) {
+      console.log(err);
+      console.log(err.message) // 错误信息
+      console.log(err.stack) // 错误发生位置,包括文件名
+    }
+  </script>
+</body>
+</html>

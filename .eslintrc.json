@@ -20,6 +20,7 @@
     "flowtype/valid-syntax": 1,
     "object-curly-spacing": ["error", "always"],
     "array-bracket-spacing": ["error", "always"],
-    "object-property-newline": 0
+    "object-property-newline": 0,
+    "space-before-function-paren": ["error", "never"]
   }
 }
