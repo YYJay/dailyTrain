@@ -24,6 +24,7 @@ export const saveInfo = async(ctx, next) => {
 
 // 获取所有的info数据
 export const fetchInfo = async(ctx, next) => {
+  console.log(Info)
   const infos = await Info.find({}) // 数据查询
 
   if (infos.length) {
