@@ -4,33 +4,24 @@ import Router from 'koa-router'
 import bodyParser from 'koa-bodyparser'
 
 import { database } from './mongodb' // 引入mongodb
-import { saveInfo, fetchInfo } from './controllers/info' // 引入info controller
-import { saveStudent, fetchStudent, fetchStudentDetail } from './controllers/student' // 引入 student controller
 
 database() // 链接数据库并且初始化数据模型
+
+const GraphqlRouter = require('./router')
 
 const app = new Koa()
 const router = new Router()
 
+const port = 3006
+
 app.use(bodyParser())
-app.use(KoaStatic(`${__dirname}/public`))
+app.use(KoaStatic(__dirname + '/public'))
 
-router.get('/test', (ctx, next) => {
-  ctx.body = 'test page'
-})
+router.use('', GraphqlRouter.routes())
 
-// 设置每一个路由对应的相对的控制器
-router.post('/saveinfo', saveInfo)
-router.get('/info', fetchInfo)
-
-router.post('/savestudent', saveStudent)
-router.get('/student', fetchStudent)
-router.get('/studentDetail', fetchStudentDetail)
-
-app
-  .use(router.routes())
+app.use(router.routes())
   .use(router.allowedMethods())
 
-app.listen(3006)
+app.listen(port)
 
-console.log('graphQL server listen port: ' + 3006)
+console.log('GraphQL-demo server listen port: ' + port)
