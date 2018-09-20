@@ -67,3 +67,28 @@ export const info = {
     }).exec()
   },
 }
+const userType = new GraphQLObjectType({
+  name: 'user',
+  fields: {
+    account: {
+      type: GraphQLString,
+    },
+  },
+})
+
+export const users = {
+  type: userType,
+  args: {
+    account: {
+      name: 'account',
+      type: GraphQLString,
+    },
+    paw: {
+      name: 'paw',
+      type: GraphQLString,
+    },
+  },
+  resolve(root, params, options) {
+    return { account: params.account }
+  },
+}
