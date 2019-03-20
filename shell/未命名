@@ -1,0 +1,16 @@
+async translation(value){
+        let jid = this.myUserInfo.getJid()
+        let vcToken = this.myUserInfo.getVctoken()
+        let role = this.myUserInfo.getRole()
+        let msg = await ApiProvider.promiseTranslateRequest(jid, vcToken, role, this.$q.i18n.getLocale().substr(0, 2), value)
+        const json = await msg.json()
+        console.log(json, '结果')
+        console.log(msg,'liuhuan');
+        console.log(msg.getStatus(),'liu');
+        if(msg.getStatus() == 1) {
+          console.log(msg.getTranslatedtext(),'liu');
+          return msg.getTranslatedtext()
+        }else{
+          return ''
+        }
+    }

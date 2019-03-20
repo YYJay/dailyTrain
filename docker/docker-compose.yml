@@ -1,0 +1,17 @@
+version: '2'
+services:
+  ui:
+    image: 192.169.3.54/kstone-solution/model-factory:master-0.0.1
+    restart: always
+    ports:
+      - "33200:3000"
+    environment:
+      IAM_URL: http://192.169.3.8:35434/iam
+      PS_API_URL: http://192.168.132.10:28085/pas/services
+      DATASET_URL: http://192.169.3.8:28080
+      PS_TOKEN: eyJjdHkiOiJKV1QiLCJlbmMiOiJBMTkyQ0JDLUhTMzg0IiwiYWxnIjoiZGlyIn0..apUQ7MjpV2b7Y6C4qhWFlw.4VFS8DQC4EWCJe3nw_krP0s65yDSiJ3yKqL2fM3qRTc_3tsbIVopRrJ5KgQD6EVOcun9GzmqrOwFJKdDtLPmAB53PT0A5XienZjObXsHCXcg8Ao61aN4bf7a1A397IMy___z1GJNviGJ6glP5Y60lbYo3e-hg5P4IEc1cJSioeeBjusKzbMnPq54_QHTxT-FCxyR1pTTpBjHWT_lYc6p61W5jrKaFV9tgX_e1ONl0rn8wYOKnknNLcu0bXRwEnCI3mxtx9XLBhzQ_EFo75zQJQ.bfEofzcFP0i1Eniv8GwX2bxfnSIJNtOC
+      REAL_TIME_DATA_URL: http://192.168.130.14:28486
+      GROUP_INFO_X_URL: http://192.169.3.8:28097
+      GROUP_INFOP_PREV_X_URL: http://192.169.3.8:48096
+      RESOURCE_X_URL: http://192.169.3.8:18086
+      DATA_SERVICE_X_URL: http://192.169.2.29:38291
